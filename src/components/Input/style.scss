@@ -1,0 +1,51 @@
+@use 'colors';
+
+.input-control {
+  position: relative;
+
+  .label {
+    color: colors.$dark-grayish-cyan;
+  }
+
+  .input-wrapper {
+    margin-top: 0.5rem;
+    position: relative;
+    width: 100%;
+
+    .input-field {
+      width: 100%;
+      background-color: colors.$very-light-grayish-cyan;
+      color: colors.$very-dark-cyan;
+      padding: 0.313rem 0.938rem;
+      border-radius: 0.313rem;
+      font-size: 24px;
+      text-align: right;
+
+      &::placeholder {
+        color: rgb(127, 156, 159, 0.6);
+      }
+
+      &:focus {
+        outline: 2px solid colors.$strong-cyan;
+      }
+
+      &.errorOutline {
+        outline: 2px solid colors.$error;
+      }
+    }
+
+    .icon {
+      position: absolute;
+      bottom: 50%;
+      left: 15px;
+      transform: translate(0%, 50%);
+    }
+  }
+
+  .error {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: colors.$error;
+  }
+}

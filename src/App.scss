@@ -1,0 +1,117 @@
+@use 'colors';
+
+.AppContainer {
+  height: 100vh;
+  position: relative;
+
+  .logo {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+  }
+
+  .calculator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: colors.$white;
+    border-radius: 1.25rem;
+    width: 55rem;
+    padding: 2rem;
+
+    @media (max-width: 991px) {
+      width: 30rem;
+    }
+
+    @media (max-width: 570px) {
+      width: 20rem;
+      padding: 1rem;
+    }
+
+    .form {
+      display: flex;
+      justify-content: space-between;
+
+      @media (max-width: 991px) {
+        flex-direction: column;
+      }
+
+      .input-container,
+      .result-container {
+        width: 48%;
+
+        @media (max-width: 991px) {
+          width: 100%;
+        }
+      }
+
+      .result-container {
+        background-color: colors.$very-dark-cyan;
+        padding: 2.5rem 2rem;
+        border-radius: 0.938rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @media (max-width: 991px) {
+          margin-top: 1rem;
+        }
+
+        @media (max-width: 570px) {
+          padding: 2rem 1.5rem;
+        }
+
+        .tip-amount-per-person,
+        .total-per-person {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .label {
+            font-weight: 400;
+            .type {
+              color: colors.$white;
+            }
+            .person {
+              color: colors.$grayish-cyan;
+              font-size: 14px;
+            }
+          }
+
+          .result {
+            font-size: 36px;
+            color: colors.$strong-cyan;
+
+            @media (max-width: 570px) {
+              font-size: 26px;
+            }
+          }
+        }
+
+        .total-per-person {
+          padding-top: 50px;
+        }
+
+        .reset-btn,
+        .submit-btn {
+          width: 100%;
+          padding: 0.5rem;
+          font-size: 20px;
+          border-radius: 0.313rem;
+          color: colors.$very-dark-cyan;
+          background-color: colors.$strong-cyan;
+
+          @media (max-width: 570px) {
+            font-size: 16px;
+          }
+
+          &:hover {
+            background-color: colors.$light-grayish-cyan;
+          }
+        }
+      }
+    }
+  }
+}

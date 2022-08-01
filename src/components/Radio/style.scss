@@ -1,0 +1,76 @@
+@use 'colors';
+
+.radio-control {
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  .select-tip-label {
+    color: colors.$dark-grayish-cyan;
+  }
+
+  .tips-container {
+    padding-top: 20px;
+    padding-bottom: 5px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+
+    @media (max-width: 570px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .tip-wrapper {
+      width: 120px;
+      height: 45px;
+      color: colors.$white;
+      background-color: colors.$very-dark-cyan;
+      border-radius: 5px;
+      overflow: hidden;
+      font-size: 24px;
+
+      @media (max-width: 570px) {
+        width: 100%;
+      }
+
+      input[type='radio'] {
+        display: none;
+
+        &:checked + label {
+          background-color: colors.$strong-cyan;
+          color: colors.$very-dark-cyan;
+        }
+      }
+
+      label {
+        cursor: pointer;
+        display: block;
+        height: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    .custom-field {
+      background-color: colors.$very-light-grayish-cyan;
+      color: colors.$very-dark-cyan;
+      font-size: 24px;
+      width: 120px;
+      height: 45px;
+      text-align: center;
+      border-radius: 0.313rem;
+      &::placeholder {
+        color: rgb(127, 156, 159, 0.6);
+      }
+      &:focus {
+        outline: 2px solid colors.$strong-cyan;
+      }
+
+      @media (max-width: 570px) {
+        width: 100%;
+      }
+    }
+  }
+}
